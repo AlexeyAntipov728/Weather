@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name" translatable="false">Weather</string>
+        <string name="history">History</string>
+        <string name="city">Moscow</string>
+        <string name="temp">t°</string>
+        <string name="rain">Rain</string>
+        <string name="wind">Wind</string>
+        <string name="icon">icon</string>
+        <string name="textview">t°</string>
+        <string name="tempVolume">+ 26</string>
+        <string name="windVolume">sw, 3–6 m/s</string>
+        <string name="choice_your_city">Choice your city</string>
+        <string name="choise_town">...</string>
+        <string name="searchButton">Button</string>
+</resources>
