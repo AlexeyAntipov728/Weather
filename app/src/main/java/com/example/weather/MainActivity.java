@@ -1,9 +1,11 @@
 package com.example.weather;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.res.Configuration;
 import android.os.Bundle;
 
-import static com.example.weather.R.id.weather_fragment;
+import static com.example.weather.R.id.mainContainer;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -11,17 +13,14 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        if(getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT){
+            getSupportFragmentManager()
+                    .beginTransaction()
+                    .add(mainContainer, new WeatherFragment())
+                    .commit();
 
+
+        }
     }
 
-//    @Override
-//    public void onFragmentInteraction(String link) {
-//        WeatherFragment wf = new WeatherFragment();
-//         getFragmentManager()
-//                .findFragmentById(weather_fragment);
-//        if (wf != null && wf.isInLayout()) {
-//            wf.setText(link);
-//        }
-//    }
-//    implements CitiesFragment.OnFragmentInteractionListener
 }

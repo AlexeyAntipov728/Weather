@@ -19,14 +19,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CitiesFragment extends Fragment {
-    Parcel currentParcel;
-    private OnFragmentInteractionListener mListener;
-    public static final String PARCEL = "parcel";
+
     private DataAdapter dataAdapter;
     private static final String CITY_TO_SEARCH = "CITY_TO_SEARCH";
     List<City> cityList = new ArrayList<>();
-    EditText editText;
-    Editable search;
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -34,34 +31,7 @@ public class CitiesFragment extends Fragment {
         RecyclerView recyclerView = view.findViewById(R.id.cities);
         dataAdapter = new DataAdapter(this, cityList);
         recyclerView.setAdapter(dataAdapter);
-        ImageButton setCity = view.findViewById(R.id.search);
-        setCity.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                updateDetail();
-            }
-        });
         return view;
-    }
-
-    interface OnFragmentInteractionListener {
-
-        void onFragmentInteraction(String link);
-    }
-
-    @Override
-    public void onAttach(Context context) {
-        super.onAttach(context);
-        try {
-            mListener = (OnFragmentInteractionListener) context;
-        } catch (ClassCastException e) {
-            throw new ClassCastException(context.toString());
-        }
-    }
-    public void updateDetail() {
-
-        String cityName = editText.getText().toString();
-        mListener.onFragmentInteraction(cityName);
     }
 
     @Override
